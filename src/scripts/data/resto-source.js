@@ -14,7 +14,7 @@ class RestoDbSource {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     const responseJson = await response.json();
     const data = responseJson.restaurant;
-    console.log('detail', data);
+    // console.log('detail', data);
     // console.log('detail', response);
     return data;
   }

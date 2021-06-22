@@ -4,15 +4,19 @@ import { createRestoItemTemplate } from '../templates/template-creator';
 const Favorite = {
   async render() {
     return `
-          <div class="content">
-              <h2 class="content__heading">Resto Favorite</h2>
-              <div id="restaurant" class="restaurant"></div>
-          </div>`;
+    <div class="container">
+        <h2 tabindex="0" class="title__content">Resto Favorit</h2>
+        <div id="restaurant" class="restaurant"></div>
+    </div>
+    `;
   },
+
   async afterRender() {
-    const restaurant = await FavoriteRestoIdb.getAllRestos();
+    const restos = await FavoriteRestoIdb.getAllRestos();
     const restaurantContainer = document.querySelector('#restaurant');
-    restaurant.forEach((resto) => {
+    console.log('restaurant favorite', restos);
+    restos.forEach((resto) => {
+      console.log('resto favorite', resto);
       restaurantContainer.innerHTML += createRestoItemTemplate(resto);
     });
   },

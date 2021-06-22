@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap'); */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -101,6 +99,10 @@ body {
     text-decoration: none;
 }
 
+.nav__title:hover {
+    text-shadow: 1px 1px #f3f3f3;
+}
+
 .hamburger {
     display: none;
     background-color: transparent;
@@ -173,8 +175,8 @@ body {
     text-align: center;
 }
 
-/* post */
-.post {
+/* restaurant */
+.restaurant {
     margin: 20px 20px;
     text-align: left;
     display: grid;
@@ -206,6 +208,11 @@ body {
     padding: 1.3rem;
 }
 
+h3 .post-item-title a {
+    color: #c48104;
+    text-decoration: none;
+}
+
 .post-item-title {
     font-size: 1.3rem;
     font-weight: 500;
@@ -222,6 +229,61 @@ body {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
     overflow: hidden;
+}
+/* resto */
+.resto {
+    padding: 20px 20px;
+    margin: 20px 20px;
+    text-align: left;
+}
+
+.resto .resto__poster {
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.resto .resto__info {
+    display: grid;
+    margin-top: 30px;
+}
+
+.resto .resto__item {
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+.resto__title {
+    text-align: left;
+}
+
+.resto .review {
+    width: auto;
+    height: 200px;
+    overflow: auto;
+}
+
+.resto .review__container {
+    border: 2px solid #eee;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0;
+    /* overflow: auto; */
+}
+
+.resto .review__container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.resto .review__container span {
+    font-size: 20px;
+    margin-right: 15px;
 }
 
 .rating-wrapper {
@@ -242,5 +304,23 @@ footer {
     text-align: center;
     font-size: 14px;
     font-weight: bold;
+}
+
+/* like */
+.like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #db0000;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 

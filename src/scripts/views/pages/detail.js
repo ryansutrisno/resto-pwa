@@ -6,29 +6,29 @@ import FavoriteButtonInitiator from '../../utils/favorite-button-initiator';
 const Detail = {
   async render() {
     return `
-    <div id="restaurant" class="restaurant"></div>
-    <div id="favoriteButtonContainer"></div>
+    <div class="container">
+      <h2 tabindex="0" class="title__content">Detail Restaurant</h2>
+          <div id="resto" class="resto"></div>
+        <div id="favoriteButtonContainer"></div>
+    </div>
     `;
   },
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const resto = await RestoDbSource.detailResto(url.id);
-    const restoContainer = document.querySelector('#restaurant');
-    restoContainer.innerHTML = createRestoDetailTemplate(resto);
+    console.log('resto detail', resto);
+    const restaurantContainer = document.querySelector('#resto');
+    restaurantContainer.innerHTML = createRestoDetailTemplate(resto);
 
     FavoriteButtonInitiator.init({
       favoriteButtonContainer: document.querySelector('#favoriteButtonContainer'),
       resto: {
         id: resto.id,
         name: resto.name,
-        address: resto.address,
-        categories: resto.categories[0].name,
-        menuDrink: resto.menus.foods[0].name,
-        menuFood: resto.menus.drink[0].name,
+        description: resto.description,
+        city: resto.city,
+        pictureId: resto.pictureId,
         rating: resto.rating,
-        customerName: resto.customerReviews.name,
-        customerReview: resto.customerReviews.review,
-        date: resto.customerReviews.date,
       },
     });
   },
