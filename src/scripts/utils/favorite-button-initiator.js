@@ -38,10 +38,12 @@ const FavoriteButtonInitiator = {
     this._favoriteButtonContainer.innerHTML = createFavoritedButtonTemplate();
 
     const likeButton = document.querySelector('#likedButton');
-    likeButton.addEventListener('click', async () => {
-      await FavoriteRestoIdb.deleteResto(this._resto.id);
-      this._renderButton();
-    });
+    if (likeButton) {
+      likeButton.addEventListener('click', async () => {
+        await FavoriteRestoIdb.deleteResto(this._resto.id);
+        this._renderButton();
+      });
+    }
   },
 };
 

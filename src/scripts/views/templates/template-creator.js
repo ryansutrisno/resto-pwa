@@ -51,17 +51,26 @@ const createRestoDetailTemplate = (resto) => {
 };
 
 const createRestoItemTemplate = (resto) => `
-    <article class="card">
+    <div class="card">
         <img class="tumbnail" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + resto.pictureId}" alt="${resto.name}">
         <div class="post-item-content">
-            <h3 class="post-item-title"><a href="${`/#/detail/${resto.id}`}">${resto.name}</a></h3>
+            <div class="post-item-title">
+                <h3><a href="${`/#/detail/${resto.id}`}">${resto.name}</a></h3>
+            </div>
             <span class="post-item-city">Lokasi: ${resto.city}</span>
             <div class="rating-wrapper">
                 <h2 class="rating">Rating: </h2><p>⭐️<span>${resto.rating}</span></p>
             </div>
             <p class="post-item-description">${resto.description}</p>
         </div>
-    </article>
+    </div>
+`;
+
+const createFavoriteTemplateEmpty = () => `
+    <div class="no__content">
+        <p>Belum ada data favorite</p>
+        <img class="no-data-image" src="./images/undraw_No_data_re_kwbl.svg" alt="No data">
+    </div>
 `;
 
 const createFavoriteButtonTemplate = () => `
@@ -81,4 +90,5 @@ export {
   createRestoItemTemplate,
   createFavoriteButtonTemplate,
   createFavoritedButtonTemplate,
+  createFavoriteTemplateEmpty,
 };

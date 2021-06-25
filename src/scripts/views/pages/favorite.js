@@ -1,5 +1,5 @@
 import FavoriteRestoIdb from '../../data/favoriteresto-idb';
-import { createRestoItemTemplate } from '../templates/template-creator';
+import { createRestoItemTemplate, createFavoriteTemplateEmpty } from '../templates/template-creator';
 
 const Favorite = {
   async render() {
@@ -15,10 +15,14 @@ const Favorite = {
     const restos = await FavoriteRestoIdb.getAllRestos();
     const restaurantContainer = document.querySelector('#restaurant');
     console.log('restaurant favorite', restos);
-    restos.forEach((resto) => {
-      console.log('resto favorite', resto);
-      restaurantContainer.innerHTML += createRestoItemTemplate(resto);
-    });
+    if (restos.length === 0) {
+      restaurantContainer.innerHTML += createFavoriteTemplateEmpty();
+    } else {
+      restos.forEach((resto) => {
+        // console.log('resto favorite', resto);
+        restaurantContainer.innerHTML += createRestoItemTemplate(resto);
+      });
+    }
   },
 };
 
