@@ -14,5 +14,6 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  if (!(event.request.url.indexOf('http') === 0)) return;
   event.respondWith(ChacheHelper.revalidateCache(event.request));
 });
