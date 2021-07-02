@@ -5,8 +5,8 @@ class RestoDbSource {
     const response = await fetch(API_ENDPOINT.LIST_RESTO);
     const responseJson = await response.json();
     const data = responseJson.restaurants;
-    console.log('data', data);
-    console.log('response list resto', responseJson);
+    // console.log('data', data);
+    // console.log('response list resto', responseJson);
     return data;
   }
 

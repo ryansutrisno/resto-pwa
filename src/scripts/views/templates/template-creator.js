@@ -54,8 +54,8 @@ const createRestoItemTemplate = (resto) => `
     <div class="card">
         <img class="tumbnail" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + resto.pictureId}" alt="${resto.name}">
         <div class="post-item-content">
-            <div class="post-item-title">
-                <h3><a href="${`/#/detail/${resto.id}`}">${resto.name}</a></h3>
+            <div>
+                <a class="nav__detail btn__size" href="${`/#/detail/${resto.id}`}">${resto.name}</a>
             </div>
             <span class="post-item-city">Lokasi: ${resto.city}</span>
             <div class="rating-wrapper">
@@ -74,13 +74,13 @@ const createFavoriteTemplateEmpty = () => `
 `;
 
 const createFavoriteButtonTemplate = () => `
-    <button aria-label="favorite this resto" id="likedButton" class="like">
+    <button aria-label="favorite this resto" id="likeButton" class="like">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
     </button>
 `;
 
 const createFavoritedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+  <button aria-label="unlike this movie" id="likedButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;

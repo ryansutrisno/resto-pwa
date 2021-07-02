@@ -105,6 +105,14 @@ html, body {
     text-shadow: 1px 1px #f3f3f3;
 }
 
+.nav__detail {
+    padding: 11px 0px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #c48104;
+}
+
 .hamburger {
     display: none;
     background-color: transparent;
@@ -231,15 +239,6 @@ html, body {
 .post-item-content {
     padding: 1.3rem;
 }
-
-.post-item-content .post-item-title h3 a {
-    color: #c48104;
-    text-decoration: none;
-}
-/* a {
-    color: #c48104;
-    text-decoration: none;
-} */
 
 .post-item-title {
     font-size: 1.3rem;
