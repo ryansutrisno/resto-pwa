@@ -16,7 +16,7 @@ const ListResto = {
     const restaurantContainer = document.querySelector('#restaurant');
     console.log('list restaurant', restos);
     restos.forEach((resto) => {
-      console.log('list resto', resto);
+      // console.log('list resto', resto);
       restaurantContainer.innerHTML += createRestoItemTemplate(resto);
     });
   },
