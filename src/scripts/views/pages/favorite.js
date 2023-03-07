@@ -16,7 +16,6 @@ const Favorite = {
     const restaurantContainer = document.querySelector('#restaurant');
     console.log('restaurant favorite', restos);
     restos.forEach((resto) => {
-      console.log('resto favorite', resto);
       restaurantContainer.innerHTML += createRestoItemTemplate(resto);
     });
   },
